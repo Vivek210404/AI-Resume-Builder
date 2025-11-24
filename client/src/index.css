@@ -4,3 +4,9 @@
 *{
     font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+@layer base {
+    button {
+        @apply cursor-pointer;
+    }
+}
