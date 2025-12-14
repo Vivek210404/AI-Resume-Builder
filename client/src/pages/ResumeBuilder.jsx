@@ -93,7 +93,12 @@ const ResumeBuilder = () => {
 
 
           {/* Right Panel - Live Resume Preview */}
-          <div></div>
+          <div className="lg:col-span-7 max-lg:mt-6">
+            <div>
+              {/* ---buttons--- */}
+            </div>
+            {/* -- Resume preview  */}
+          </div>
         </div>
       </div>
     </div>
