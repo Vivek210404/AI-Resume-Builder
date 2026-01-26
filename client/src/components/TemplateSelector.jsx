@@ -38,7 +38,7 @@ const TemplateSelector = ({ selectedTemplate, onChange }) => {
         <Layout size={14} /> <span className="max-sm:hidden">Template</span>
       </button>
       {isOpen && (
-        <div className="absolute top-full w-xs p-3 mt-2 space-y-3 z-10 bg-white rounded-md border border-gray-200 shadow-sm">
+        <div className="absolute top-full w-64 p-3 mt-2 space-y-3 z-10 bg-white rounded-md border border-gray-200 shadow-sm">
           {templates.map((template) => (
             <div
               key={template.id}

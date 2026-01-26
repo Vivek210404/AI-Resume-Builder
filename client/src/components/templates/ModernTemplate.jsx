@@ -2,13 +2,26 @@ import { Mail, Phone, MapPin, Linkedin, Globe } from "lucide-react";
 
 const ModernTemplate = ({ data, accentColor }) => {
 	const formatDate = (dateStr) => {
-		if (!dateStr) return "";
+		if (!dateStr || !dateStr.includes("-")) return "";
+
 		const [year, month] = dateStr.split("-");
+		if (!year || !month) return "";
+
 		return new Date(year, month - 1).toLocaleDateString("en-US", {
 			year: "numeric",
-			month: "short"
+			month: "short",
 		});
 	};
+
+
+	const cleanUrl = (url) => {
+		if (!url) return "";
+		return url
+			.replace("https://", "")
+			.replace("http://", "")
+			.replace("www.", "");
+		};
+
 
 	return (
 		<div className="max-w-4xl mx-auto bg-white text-gray-800">
@@ -40,13 +53,13 @@ const ModernTemplate = ({ data, accentColor }) => {
 					{data.personal_info?.linkedin && (
 						<a target="_blank" href={data.personal_info?.linkedin} className="flex items-center gap-2">
 							<Linkedin className="size-4" />
-							<span className="break-all text-xs">{data.personal_info.linkedin.split("https://www.")[1] ? data.personal_info.linkedin.split("https://www.")[1] : data.personal_info.linkedin}</span>
+							<span className="break-all text-xs">{cleanUrl(data.personal_info.linkedin)}</span>
 						</a>
 					)}
 					{data.personal_info?.website && (
 						<a target="_blank" href={data.personal_info?.website} className="flex items-center gap-2">
 							<Globe className="size-4" />
-							<span className="break-all text-xs">{data.personal_info.website.split("https://")[1] ? data.personal_info.website.split("https://")[1] : data.personal_info.website}</span>
+							<span className="break-all text-xs">{cleanUrl(data.personal_info.website)}</span>
 						</a>
 					)}
 				</div>
@@ -103,7 +116,7 @@ const ModernTemplate = ({ data, accentColor }) => {
 
 						<div className="space-y-6">
 							{data.project.map((p, index) => (
-								<div key={index} className="relative pl-6 border-l border-gray-200" style={{borderLeftColor: accentColor}}>
+								<div key={index} className="relative pl-6 border-l-2" style={{borderLeftColor: accentColor}}>
 
 
 									<div className="flex justify-between items-start">
