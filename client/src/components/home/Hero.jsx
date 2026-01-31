@@ -1,7 +1,9 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const { user } = useSelector((state) => state.auth);
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   const logos = [
@@ -17,7 +19,7 @@ const Hero = () => {
         {/* Navbar */}
         <nav className="z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-40 text-sm">
           <a href="https://prebuiltui.com">
-            <img src="/logo.svg" alt="logo" className="h-11 w-auto"/>
+            <img src="/logo.svg" alt="logo" className="h-11 w-auto" />
           </a>
 
           <div className="hidden md:flex items-center gap-8 transition duration-500 text-slate-800">
@@ -27,10 +29,7 @@ const Hero = () => {
             <a href="#features" className="hover:text-green-600 transition">
               Features
             </a>
-            <a
-              href="#testimonials"
-              className="hover:text-green-600 transition"
-            >
+            <a href="#testimonials" className="hover:text-green-600 transition">
               Testimonials
             </a>
             <a href="#cta" className="hover:text-green-600 transition">
@@ -40,16 +39,25 @@ const Hero = () => {
 
           <div className="flex gap-2">
             <Link
-              to='/app?state=register'
+              to="/app?state=register"
               className="hidden md:block px-6 py-2 bg-green-500 hover:bg-green-700 active:scale-95 transition-all rounded-full text-white"
+              hidden={user}
             >
               Get started
             </Link>
             <Link
-              to='/app?state=login'
+              to="/app?state=login"
               className="hidden md:block px-6 py-2 border active:scale-95 hover:bg-slate-50 transition-all rounded-full text-slate-700 hover:text-slate-900"
+              hidden={user}
             >
               Login
+            </Link>
+            <Link
+              to={"/app"}
+              className="hidden md:block px-8 py-2 bg-green-500 hover:bg-green-700 active:scale-95 transition-all rounded-full text-white"
+              hidden={!user}
+            >
+              Dashboard
             </Link>
           </div>
 
@@ -168,7 +176,8 @@ const Hero = () => {
           </h1>
 
           <p className="max-w-md text-center text-base my-7">
-            Create, edit and download professional resumes with AI-powered assistance.
+            Create, edit and download professional resumes with AI-powered
+            assistance.
           </p>
 
           {/* CTA Buttons */}
