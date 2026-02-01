@@ -85,7 +85,7 @@ const PersonalInfoForm = ({
                   : URL.createObjectURL(data.image)
               }
               alt="user-image"
-              className="w-16 h-16 rounded-full object-cover mt-5 ring ring-slate-300 hover:opacity-80"
+              className="w-16 h-16 rounded-full object-cover mt-5 ring ring-slate-300 hover:opacity-80 bg-white"
             />
           ) : (
             <div className="inline-flex items-center gap-2 mt-5 text-slate-600 hover:text-slate-700 cursor-pointer">
