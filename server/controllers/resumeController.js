@@ -108,17 +108,29 @@ export const updateResume = async (req, res) => {
 
         if (image) {
             const imageBufferData = fs.createReadStream(image.path);
+            const preTransform = "w-300, h-300, fo-face, z-0.75" +
+                (removeBackground ? ",e-bgremove" : "");
+            const fallbackTransform = "w-300, h-300" +
+                (removeBackground ? ",e-bgremove" : "");
 
-            const response = await imageKit.files.upload({
-                file: imageBufferData,
-                fileName: `resume-profile-${userId}.png`,
-                folder: "user-resumes",
-                transformation: {
-                    pre:
-                        "w-300, h-300, fo-face, z-0.75" +
-                        (removeBackground ? ",e-bgremove" : ""),
-                },
-            });
+            let response;
+            try {
+                response = await imageKit.files.upload({
+                    file: imageBufferData,
+                    fileName: `resume-profile-${userId}.png`,
+                    folder: "user-resumes",
+                    transformation: { pre: preTransform },
+                });
+            } catch (transformError) {
+                const fallbackBuffer = fs.createReadStream(image.path);
+                response = await imageKit.files.upload({
+                    file: fallbackBuffer,
+                    fileName: `resume-profile-${userId}.png`,
+                    folder: "user-resumes",
+                    transformation: { pre: fallbackTransform },
+                });
+            }
+
             fs.unlink(image.path, (err) => {
                 if (err) console.error("Error deleting local temp file:", err);
             });
