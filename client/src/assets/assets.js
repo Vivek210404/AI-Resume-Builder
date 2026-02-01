@@ -67,7 +67,7 @@ export const dummyResumeData = [
         ],
         template: "minimal-image",
         accent_color: "#14B8A6",
-        project: [
+        projects: [
             {
                 name: "Team Task Management System",
                 type: "Web Application (Productivity Tool)",

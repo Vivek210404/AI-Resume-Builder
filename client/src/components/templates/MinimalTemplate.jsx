@@ -68,14 +68,14 @@ const MinimalTemplate = ({ data, accentColor }) => {
             )}
 
             {/* Projects */}
-            {data.project && data.project.length > 0 && (
+            {data.projects && data.projects.length > 0 && (
                 <section className="mb-10">
                     <h2 className="text-sm uppercase tracking-widest mb-6 font-medium" style={{ color: accentColor }}>
                         Projects
                     </h2>
 
                     <div className="space-y-4">
-                        {data.project.map((proj, index) => (
+                        {data.projects.map((proj, index) => (
                             <div key={index} className="flex flex-col gap-2 justify-between items-baseline">
                                 <h3 className="text-lg font-medium ">{proj.name}</h3>
                                 <p className="text-gray-600">{proj.description}</p>
