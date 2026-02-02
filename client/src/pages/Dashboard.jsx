@@ -4,6 +4,7 @@ import {
   LoaderCircleIcon,
   PencilIcon,
   PlusIcon,
+  Sparkles,
   TrashIcon,
   UploadCloud,
   UploadCloudIcon,
@@ -201,6 +202,13 @@ const Dashboard = () => {
                 >
                   Updated on {new Date(resume.updatedAt).toLocaleDateString()}
                 </p>
+
+                <div className="absolute left-2 bottom-6">
+                  <button onClick={(e)=>{e.stopPropagation();navigate(`/app/analyze/${resume._id}`);}} className="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] text-slate-700 shadow-sm hover:bg-white hover:shadow-md transition-all border border-slate-200/70">
+                    <Sparkles className="size-3 text-purple-500" />
+                    <span>Analyze with AI</span>
+                  </button>
+                </div>
 
                 <div
                   onClick={(e) => e.stopPropagation()}
