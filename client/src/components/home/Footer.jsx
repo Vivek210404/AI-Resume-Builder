@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <footer className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-gradient-to-r from-white via-green-200/60 to-white mt-40">
         <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
-          <a href="https://resume-builder-ai-mern.vercel.app/">
+          <a href="/">
             <img
               src="./logo.svg"
               alt="Resume Builder Logo"
