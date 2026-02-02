@@ -41,7 +41,7 @@ const Testimonial = () => {
                     <span className="text-xs text-slate-500">{card.handle}</span>
                 </div>
             </div>
-            <p className="text-sm py-4 text-gray-800">Radiant made undercutting all of our competitors an absolute breeze.</p>
+            <p className="text-sm py-4 text-gray-800">The AI-powered resume analysis gave me insights I never got from traditional resume tools. The ATS score and keyword suggestions are a game changer.</p>
         </div>
     );
 
