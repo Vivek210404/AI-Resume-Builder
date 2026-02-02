@@ -1,16 +1,20 @@
 import React from "react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
-      <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[auto_1fr_auto] 
-                    gap-10 py-16 px-6 md:px-16 lg:px-24 xl:px-32 
-                    text-[13px] text-gray-500 bg-gradient-to-r 
-                    from-white via-green-200/60 to-white mt-40">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-16 xl:gap-24">
-          <a href="#">
-            <img src="/logo.svg" alt="logo" className="h-11 w-auto"/>
+      <footer className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-gradient-to-r from-white via-green-200/60 to-white mt-40">
+        <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
+          <a href="https://resume-builder-ai-mern.vercel.app/">
+            <img
+              src="./logo.svg"
+              alt="Resume Builder Logo"
+              className="h-11 w-auto"
+            />
           </a>
+
           <div>
             <p className="text-slate-800 font-semibold">Product</p>
             <ul className="mt-2 space-y-2">
@@ -36,6 +40,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {/* Column 2: Resources/Company Links */}
           <div>
             <p className="text-slate-800 font-semibold">Resources</p>
             <ul className="mt-2 space-y-2">
@@ -55,6 +61,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                {/* Careers Link with Hiring Badge */}
                 <a href="/" className="hover:text-green-600 transition">
                   Careers
                   <span className="text-xs text-white bg-green-600 rounded-md ml-2 px-2 py-1">
@@ -69,6 +76,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {/* Column 3: Legal Links */}
           <div>
             <p className="text-slate-800 font-semibold">Legal</p>
             <ul className="mt-2 space-y-2">
@@ -85,15 +94,18 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col justify-start lg:justify-self-end 
-                max-md:items-center max-md:text-center gap-2">
+
+        {/* Right Section: Motto, Social Icons, and Copyright */}
+        <div className="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
           <p className="max-w-60">
             Making every customer feel valued—no matter the size of your
             audience.
           </p>
+
+          {/* Social Media Icons (Embedded SVGs) */}
           <div className="flex items-center gap-4 mt-3">
             <a
-              href="https://dribbble.com/prebuiltui"
+              href="https://dribbble.com"
               target="_blank"
               rel="noreferrer"
             >
@@ -116,8 +128,10 @@ const Footer = () => {
                 <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
               </svg>
             </a>
+
+            {/* LinkedIn Link */}
             <a
-              href="https://www.linkedin.com/company/prebuiltui"
+              href="https://www.linkedin.com/in/vivek-kumar-2k23/"
               target="_blank"
               rel="noreferrer"
             >
@@ -139,7 +153,13 @@ const Footer = () => {
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
-            <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
+
+            {/* X/Twitter Link */}
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -156,8 +176,10 @@ const Footer = () => {
                 <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
               </svg>
             </a>
+
+            {/* YouTube Link */}
             <a
-              href="https://www.youtube.com/@prebuiltui"
+              href="https://www.youtube.com"
               target="_blank"
               rel="noreferrer"
             >
@@ -179,18 +201,27 @@ const Footer = () => {
               </svg>
             </a>
           </div>
+
+          {/* Copyright Notice: Uses the dynamically calculated current year */}
           <p className="mt-3 text-center">
-            © 2025 resume.
+            © {currentYear}{" "}
+            <a
+              href="https://vivek-portfolio45.vercel.app/"
+              target="_blank"
+            >
+              Made By ❤️‍🔥 with Vivek
+            </a>
           </p>
         </div>
       </footer>
 
       <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-                * {
-                    font-family: 'Poppins', sans-serif;
-                }
-        `}</style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+    `}</style>
     </>
   );
 };
