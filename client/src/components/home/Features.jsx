@@ -59,10 +59,10 @@ const Features = () => {
               </svg>
               <div className="space-y-2">
                 <h3 className="text-base font-semibold text-slate-700">
-                  Real-Time Analytics
+                  Real-Time Resume Preview
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xs">
-                  Get instant insights into your finances with live dashboards.
+                  See live changes as you build and edit your resume.
                 </p>
               </div>
             </div>
@@ -86,10 +86,10 @@ const Features = () => {
               </svg>
               <div className="space-y-2">
                 <h3 className="text-base font-semibold text-slate-700">
-                  Bank-Grade Security
+                  AI-Powered ATS Analysis
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xs">
-                  End-to-end encryption, 2FA, compliance with GDPR standards.
+                  Get instant ATS score, strengths, weaknesses, and keyword suggestions.
                 </p>
               </div>
             </div>
@@ -114,11 +114,10 @@ const Features = () => {
               </svg>
               <div className="space-y-2">
                 <h3 className="text-base font-semibold text-slate-700">
-                  Customizable Reports
+                  Multiple Templates & Export
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xs">
-                  Export professional, audit-ready financial reports for tax or
-                  internal review.
+                  Choose from modern templates and export your resume as PDF.
                 </p>
               </div>
             </div>
