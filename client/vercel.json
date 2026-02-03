@@ -5,8 +5,8 @@
       "destination": "/api/$1"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/*",
+      "destination": "/"
     }
   ]
 }
