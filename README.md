@@ -1,5 +1,12 @@
 # 🚀 AI-Powered Resume Builder using MERN + Gemini + Tailwind UI
 
+------------------------------------------------------------------------
+
+## 🌐 Live Demo
+
+- **Frontend:** https://ai-resume-builder-f.vercel.app
+- **Backend:** https://ai-resume-builder-hazel-omega.vercel.app
+
 ## ⭐ About the Project
 
 **Resume Builder** is a modern web application that helps users create
@@ -64,18 +71,6 @@ CRUD, live preview, and PDF export.
 
 ------------------------------------------------------------------------
 
-## 🧱 Architecture
-
-Frontend (React + Vite + Tailwind)\
-⬇️ REST API\
-Backend (Node + Express)\
-⬇️\
-Database (MongoDB)\
-⬇️\
-AI Layer (Gemini API)
-
-------------------------------------------------------------------------
-
 ## 🖼️ Screenshots
 
 | Home Page | AI Enhance | Resume Preview | AI Resume Analysis |
@@ -83,12 +78,6 @@ AI Layer (Gemini API)
 | ![Home](./screenshots/Home.png) | ![AI Enhance](./screenshots/ai%20enhance.png) | ![Preview](./screenshots/preview.png) | ![Analysis](./screenshots/analyze.png) |
 
 
-------------------------------------------------------------------------
-
-## 🌐 Live Demo
-
-- **Frontend:** https://ai-resume-builder-f.vercel.app
-- **Backend:** https://ai-resume-builder-hazel-omega.vercel.app
 
 ------------------------------------------------------------------------
 
@@ -138,40 +127,3 @@ npm run dev
 ```
 
 Open app at: http://localhost:5173
-
-------------------------------------------------------------------------
-
-## 📡 API Endpoints
-
-### 👤 User Routes (`/api/users`)
-
-| Method | Endpoint  | Description                   | Auth |
-|--------|-----------|-------------------------------|------|
-| POST   | /register | Register a new user           | ❌ |
-| POST   | /login    | Login user & get JWT token    | ❌ |
-| GET    | /data     | Get logged-in user details    | ✔️ JWT |
-| GET    | /resumes  | Get all resumes of the user   | ✔️ JWT |
-
----
-
-### 📄 Resume Routes (`/api/resumes`)
-
-| Method | Endpoint            | Description           | Auth |
-|--------|---------------------|-----------------------|------|
-| POST   | /create             | Create a new resume   | ✔️ JWT |
-| PUT    | /update             | Update resume         | ✔️ JWT |
-| DELETE | /delete/:resumeId   | Delete resume by ID   | ✔️ JWT |
-| GET    | /get/:resumeId      | Get resume by ID      | ✔️ JWT |
-| GET    | /public/:resumeId   | Get public resume     | ❌ |
-
----
-
-### 🤖 AI Routes (`/api/ai`)
-
-| Method | Endpoint           | Description                        | Auth |
-|--------|--------------------|------------------------------------|------|
-| POST   | /enhance-pro-sum   | Enhance professional summary       | ✔️ JWT |
-| POST   | /enhance-job-desc  | Improve job description            | ✔️ JWT |
-| POST   | /upload-resume     | Upload PDF resume & extract data   | ✔️ JWT |
-| POST   | /analyze-resume    | ATS analysis                       | ✔️ JWT |
-
