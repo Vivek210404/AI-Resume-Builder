@@ -175,21 +175,3 @@ Open app at: http://localhost:5173
 | POST   | /upload-resume     | Upload PDF resume & extract data   | ✔️ JWT |
 | POST   | /analyze-resume    | ATS analysis                       | ✔️ JWT |
 
-
-------------------------------------------------------------------------
-
-## 🤝 Contributing
-
-Contributions are welcome:
-
-- Fork the repository  
-- Create a new branch  
-- Commit your changes  
-- Submit a pull request  
-
-------------------------------------------------------------------------
-
-## 📬 Contact
-
-👤 Vivek\
-Made with ❤️ by Vivek
